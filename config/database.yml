@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: 'lipeiqin'
+  password: 'pop007755'
+  host: localhost
+  pool: 25
+
+development:
+  <<: *default
+  database: sl_development
+
+test:
+  <<: *default
+  database: sl_test
+
+production:
+  <<: *default
+  adapter: postgresql
+#  host: 45.55.204.219
+  host: shoplist.c83dritd38a7.us-west-2.rds.amazonaws.com
+  encoding: utf8
+  database: shoplist_production
+  pool: 40
